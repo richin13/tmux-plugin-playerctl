@@ -20,7 +20,7 @@ See [playerctl](https://github.com/acrisci/playerctl#installing)'s instructions 
 Add plugin to the list of TPM plugins in `.tmux.conf`:
 
 ```
-set -g @plugin 'richin13/tmux-playerctl-plugin'
+set -g @plugin 'richin13/tmux-plugin-playerctl'
 ```
 
 Hit `prefix + I` to fetch the plugin and source it.
