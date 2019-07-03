@@ -4,6 +4,9 @@ CWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 source "$CWD/scripts/helpers.sh"
 
+playerctl_short="#($CWD/scripts/playerctl_short.sh)"
+playerctl_short_interpolation="\#{playerctl_short}"
+
 playerctl_full="#($CWD/scripts/playerctl_full.sh)"
 playerctl_full_interpolation="\#{playerctl_full}"
 
