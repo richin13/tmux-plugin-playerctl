@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 main() {
-  local MAX_CHARS=10
+  local MAX_CHARS=40
   local full=$(playerctl metadata --format "{{ artist }} - {{ title }}")
   local shorten=$(echo $full | cut -c 1-$MAX_CHARS)
   local info_char_count=$(echo $full | wc -c)
