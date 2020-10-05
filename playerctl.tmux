@@ -22,6 +22,7 @@ playerctl_album_interpolation="\#{playerctl_album}"
 
 do_interpolation() {
   local string=$1
+  local string=${string/$playerctl_short_interpolation/$playerctl_short}
   local string=${string/$playerctl_full_interpolation/$playerctl_full}
   local string=${string/$playerctl_title_interpolation/$playerctl_title}
   local string=${string/$playerctl_artist_interpolation/$playerctl_artist}
