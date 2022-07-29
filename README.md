@@ -61,7 +61,7 @@ set -g status-right   "#{playerctl_full}"
 
 ## Settings
 
-Available settings for `playerctl_short`:
+Available settings for `playerctl_short` (shown values are the defaults):
 
 ```bash
 #: Number of characters to show
