@@ -4,7 +4,7 @@ A tmux plugin for using [playerctl](https://github.com/acrisci/playerctl) to dis
 
 ## Pre-requisites
 
-Make sure you have *playerctl* installed.
+Make sure you have *playerctl* & *bash* installed.
 
 ```bash
 # If you're in Arch
@@ -50,11 +50,25 @@ The currently available options are:
 - `#{playerctl_title}`: Display the song's title information
 - `#{playerctl_album}`: Display the song's album information
 - `#{playerctl_full}`: Display the song info in the format [Artist] - [Title]
+- `#{playerctl_short}`: Display the song info in the format [Artist] - [Title] but trimmed
+to a max number of characters (default: 30)
 
 Just add the desired option to your `.tmux.conf` like this:
 
 ```bash
 set -g status-right   "#{playerctl_full}"
+```
+
+## Settings
+
+Available settings for `playerctl_short`:
+
+```bash
+#: Number of characters to show
+set -g @short_length "30"
+
+#: Character(s) to append at the end of the trimmed song name
+set -g @short_append_chars "..."
 ```
 
 ## License
