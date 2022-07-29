@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CWD="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+CWD="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 source "$CWD/scripts/helpers.sh"
 
@@ -19,7 +19,6 @@ playerctl_artist_interpolation="\#{playerctl_artist}"
 playerctl_album="#($CWD/scripts/playerctl_album.sh)"
 playerctl_album_interpolation="\#{playerctl_album}"
 
-
 do_interpolation() {
   local string=$1
   local string=${string/$playerctl_short_interpolation/$playerctl_short}
@@ -32,8 +31,9 @@ do_interpolation() {
 
 update_tmux_option() {
   local option="$1"
-  local option_value="$(get_tmux_option "$option")"
-  local new_option_value="$(do_interpolation "$option_value")"
+  local option_value, new_option_value
+  option_value="$(get_tmux_option "$option")"
+  new_option_value="$(do_interpolation "$option_value")"
 
   tmux set-option -gq "$option" "$new_option_value"
 }
