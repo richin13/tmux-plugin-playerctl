@@ -19,6 +19,9 @@ playerctl_artist_interpolation="\#{playerctl_artist}"
 playerctl_album="#($CWD/scripts/playerctl_album.sh)"
 playerctl_album_interpolation="\#{playerctl_album}"
 
+playerctl_status="#($CWD/scripts/playerctl_status.sh)"
+playerctl_status_interpolation="\#{playerctl_status}"
+
 do_interpolation() {
   local string=$1
   local string=${string/$playerctl_short_interpolation/$playerctl_short}
@@ -26,6 +29,7 @@ do_interpolation() {
   local string=${string/$playerctl_title_interpolation/$playerctl_title}
   local string=${string/$playerctl_artist_interpolation/$playerctl_artist}
   local string=${string/$playerctl_album_interpolation/$playerctl_album}
+  local string=${string/$playerctl_status_interpolation/$playerctl_status}
   echo "$string"
 }
 
