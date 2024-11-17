@@ -52,11 +52,12 @@ The currently available options are:
 - `#{playerctl_full}`: Display the song info in the format [Artist] - [Title]
 - `#{playerctl_short}`: Display the song info in the format [Artist] - [Title] but trimmed
 to a max number of characters (default: 30)
+- `#{playerctl_status}`: Display the player's status (default: Playing = ▶, Paused = ⏸, Stopped = ⏹)
 
 Just add the desired option to your `.tmux.conf` like this:
 
 ```bash
-set -g status-right   "#{playerctl_full}"
+set -g status-right   "#{playerctl_status} #{playerctl_full}"
 ```
 
 ## Settings
@@ -69,6 +70,21 @@ set -g @short_length "30"
 
 #: Character(s) to append at the end of the trimmed song name
 set -g @short_append_chars "..."
+```
+
+Available settings for `playerctl_status`:
+
+```bash
+#: Shown values are the defaults
+
+#: Character to show when the player is playing
+set -g @status_playing "▶"
+
+#: Character to show when the player is paused
+set -g @status_paused "⏸"
+
+#: Character to show when the player is stopped
+set -g @status_stopped "⏹"
 ```
 
 ## License
